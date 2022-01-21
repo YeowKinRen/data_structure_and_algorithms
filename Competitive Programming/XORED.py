@@ -23,4 +23,3 @@ for _ in range(int(input())):
             else:
                 ans[0] ^= set_18
         print(*ans)
-            

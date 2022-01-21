@@ -1,3 +1,7 @@
+"""
+
+"""
+
 def is_palindrome(s):
     for i in range(len(s)):
         if s[i] != s[len(s) - 1 - i]:
@@ -122,7 +126,6 @@ def longest_palindrome_ma(s):
 
 if __name__ == '__main__':
     string = "AASALASAAP"
-    print(is_palindrome("SALAS"))
     print(longest_palindrome_n(string))
     print(longest_palindrome_dp(string))
     print(longest_palindrome_ma(string))

@@ -1,29 +1,29 @@
 """
 Minimum Sum Partition
 
-Partition a set into two subsets such that the difference of the subset sums is the minimum.
-For example, given a set, { 1, 2, 2, 2, 3 }, the solution is
-{ 1, 2, 2 }, where sum is 5
-{ 2, 3 } where sum is 5
-Therefore, the difference of the subset sums is 0 which is minimum.
 """
-def msp(arr):
-    total = sum(arr) // 2 + 1
+
+
+def min_sum_partition(l):
+    """Dynamic Programming implementation O(N^2)"""
+    total = sum(l) // 2 + 1
     memo = [False] * total
     memo[0] = True
-    for index, i in enumerate(arr):
-        for j in range(total-1, i-1, -1):
-            print(index, i,"enter     ",j)
-            if memo[j-1]:
-                print(j)
+    for index, i in enumerate(l):
+        for j in range(total - 1, i - 1, -1):
+            # print(index, i,"enter     ",j)
+            if memo[j - 1]:
+                # print(j)
                 memo[j] = True
-    for j in range(total-1, -1, -1):
+    for j in range(total - 1, -1, -1):
         if memo[j]:
-            print(sum(arr))
-            return sum(arr) -1 * j  # sum(arr) - j
+            # print(sum(arr))
+            return sum(arr) - 1 * j  # sum(arr) - j
 
 
-print(msp([1, 2, 2, 2, 3]))
+if __name__ == '__main__':
+    arr = [1, 2, 2, 2, 3]
+    print(min_sum_partition(arr))
 
 """
 This problem is very similar to the 0/1 Knapsack problem although it can be further optimized but I will explain a non-optimized one because it is simpler to understand.
