@@ -44,10 +44,29 @@ def shortest_supersequence_r(s1, s2, m, n):
     return min(shortest_supersequence_r(s1, s2, m, n - 1) + 1, shortest_supersequence_r(s1, s2, m - 1, n) + 1)
 
 
-# TODO
+def shortest_supersequence_dp(s1, s2):
+    m = len(s2)
+    n = len(s1)
+    memo = [[0] * (m + 1) for _ in range(n + 1)]
+
+    for i in range(n + 1):
+        memo[i][0] = i
+    for j in range(m + 1):
+        memo[0][j] = j
+
+    for i in range(n):
+        for j in range(m):
+            if s1[i] == s2[j]:
+                memo[i + 1][j + 1] = memo[i][j] + 1
+            else:
+                memo[i + 1][j + 1] = min(memo[i][j + 1]+1, memo[i + 1][j]+1)
+    return memo[n][m]
+
+
 if __name__ == '__main__':
     str1 = "ABCBDAB"
     str2 = "BDCABA"
 
     print(shortest_supersequence_n(str1, str2))
     print(shortest_supersequence_r(str1, str2, len(str1), len(str2)))
+    print(shortest_supersequence_dp(str1, str2))
