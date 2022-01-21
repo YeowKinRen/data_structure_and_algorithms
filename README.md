@@ -1,6 +1,6 @@
 # Guacamole
 
-##Data Structure and Algorithms
+## Data Structure and Algorithms
 
 A list of Algorithms implemented within the project:
 * [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming):
@@ -19,7 +19,7 @@ A list of Algorithms implemented within the project:
 
 ***
 
-##Competitive Programming Problems and Solutions
+## Competitive Programming Problems and Solutions
 
 *
 *
