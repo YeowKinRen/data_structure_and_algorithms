@@ -1,12 +1,26 @@
 # Guacamole
 
-Data Structure and Algorithms
-Competitive Programming Problems and Solutions
-![GitHub Logo](https://d1m75rqqgidzqn.cloudfront.net/images/logo.png) Format: ![Alt Text](url) 
+##Data Structure and Algorithms
 
-Order Lists:
-Item 1Item 2Item 3Item 4Item 5
+A list of Algorithms implemented within the project:
+* [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming):
+1. 0-1 Knapsack Problem
+2. Unbounded Knapsack Problem
+3. Longest Common Subsequence Problem
+4. Shortest Common Supersequence Problem
+5. Maximum Subarray Sum
+6. Longest Palindromic Substring
+7. Coin Change
 
-But I have to admit, tasks lists are my favourite:
-– [x] This is a complete item– [ ] This is an incomplete item
-Result:
+* [Pattern Matching Algorithm](https://en.wikipedia.org/wiki/String-searching_algorithm#Classification_of_search_algorithms): 
+1. Rabin Karp Algorithm
+
+* [Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm): 
+
+***
+
+##Competitive Programming Problems and Solutions
+
+*
+*
+*
