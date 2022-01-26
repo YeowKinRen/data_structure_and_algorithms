@@ -16,6 +16,9 @@ A list of Algorithms implemented within the project:
 1. Rabin Karp Algorithm
 
 * [Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm): 
+1. Counting Sort
+2. Radix Sort
+3. Merge Sort
 
 ***
 
