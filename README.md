@@ -11,6 +11,7 @@ A list of Algorithms implemented within the project:
 5. Maximum Subarray Sum
 6. Longest Palindromic Substring
 7. Coin Change
+8. Longest increasing subsequence Problem
 
 * [Pattern Matching Algorithm](https://en.wikipedia.org/wiki/String-searching_algorithm#Classification_of_search_algorithms): 
 1. Rabin Karp Algorithm

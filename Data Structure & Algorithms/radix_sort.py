@@ -1,3 +1,11 @@
+"""
+Author: Yeow Kin Ren
+Copyright 2013, Yeow Kin Ren, All rights reserved.
+
+Radix Sort
+"""
+
+
 def counting_sort(array, place):
     n = len(array)
     output = [0] * n
@@ -25,10 +33,7 @@ def counting_sort(array, place):
 
 
 def radix_sort(array):
-    # Get maximum element
     max_element = max(array)
-
-    # Apply counting sort to sort elements based on place value.
     place = 1
     while max_element // place > 0:
         counting_sort(array, place)

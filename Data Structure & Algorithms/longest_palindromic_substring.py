@@ -1,5 +1,8 @@
 """
+Author: Yeow Kin Ren
+Copyright 2013, Yeow Kin Ren, All rights reserved.
 
+Longest Palindromic Substring Problem
 """
 
 def is_palindrome(s):

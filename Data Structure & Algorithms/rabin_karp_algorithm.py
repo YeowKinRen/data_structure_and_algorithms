@@ -1,5 +1,8 @@
 """
+Author: Yeow Kin Ren
+Copyright 2013, Yeow Kin Ren, All rights reserved.
 
+Rabin-Karp Algorithm
 """
 
 def rabin_karp(pat, txt, q=101):

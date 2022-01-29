@@ -1,6 +1,8 @@
 """
-Edit distance
-Levenshtein distance
+Author: Yeow Kin Ren
+Copyright 2013, Yeow Kin Ren, All rights reserved.
+
+Edit distance (Levenshtein distance)
 """
 
 
