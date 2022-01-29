@@ -3,7 +3,7 @@
 ## Data Structure and Algorithms
 
 A list of Algorithms implemented within the project:
-* ###[Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming):
+### [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming):
 1. [0-1 Knapsack Problem](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/01_knapsack.py)
 2. [Unbounded Knapsack Problem](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/unbounded_knapsack.py)
 3. [Longest Common Subsequence Problem](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/longest_common_subsequence.py)
