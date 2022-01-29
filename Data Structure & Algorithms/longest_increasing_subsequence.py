@@ -60,4 +60,3 @@ if __name__ == '__main__':
     arr = [10, 22, 9, 33, 21, 50, 41, 60]
     print("Length of lis is", lis_b(arr))
     print("Length of lis is", lis_dp(arr))
-    # This code is contributed by Nikhil Kumar Singh

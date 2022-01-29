@@ -13,10 +13,10 @@ A list of Algorithms implemented within the project:
 7. [Coin Change](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/coin_change.py)
 8. [Longest increasing subsequence Problem](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/longest_increasing_subsequence.py)
 
-* ###[Pattern Matching Algorithm](https://en.wikipedia.org/wiki/String-searching_algorithm#Classification_of_search_algorithms): 
+### [Pattern Matching Algorithm](https://en.wikipedia.org/wiki/String-searching_algorithm#Classification_of_search_algorithms): 
 1. [Rabin Karp Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/rabin_karp_algorithm.py)
 
-* ###[Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm): 
+### [Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm): 
 1. [Counting Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/counting_sort.py)
 2. [Radix Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/radix_sort.py)
 3. [Merge Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/merge_sort.py)
