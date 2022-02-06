@@ -23,6 +23,9 @@ A list of Algorithms implemented within the project:
 4. [Bucket Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/bucket_sort.py)
 5. [Tim sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/timsort.py)
 
+### [Tree Algorithm](https://en.wikipedia.org/wiki/Binary_search_tree): 
+1. [Binary Saarch Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/counting_sort.py)
+
 ***
 
 ## Competitive Programming Problems and Solutions
