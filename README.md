@@ -24,7 +24,9 @@ A list of Algorithms implemented within the project:
 5. [Tim sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/timsort.py)
 
 ### [Tree Algorithm](https://en.wikipedia.org/wiki/Binary_search_tree): 
-1. [Binary Search Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/counting_sort.py)
+1. [Binary Search Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/binary_search_tree.py)
+1. [Red Black Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/red_black_tree.py)
+1. [AVL Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/avl_tree.py)
 
 ***
 

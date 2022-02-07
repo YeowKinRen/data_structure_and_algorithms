@@ -1,6 +1,8 @@
 """
+#################################################################
 Author: Yeow Kin Ren
-Copyright 2013, Yeow Kin Ren, All rights reserved.
+Copyright (c) 2022 YeowKinRen, All rights reserved.
+#################################################################
 
 Timsort
 A hybrid stable sorting algorithm, derived from merge sort and insertion sort.
