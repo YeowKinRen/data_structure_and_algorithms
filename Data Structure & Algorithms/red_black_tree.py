@@ -1,7 +1,7 @@
 """
 #################################################################
 Author: Yeow Kin Ren
-Copyright 2013, Yeow Kin Ren, All rights reserved.
+Copyright (c) 2022 YeowKinRen, All rights reserved.
 #################################################################
 Red-Black Tree
 """
@@ -42,6 +42,16 @@ class Node(object):
         else:
             self.right = child
         child.parent = self
+
+    def is_left(self, node):
+        if self.left is not None and self.left.value == node.value:
+            return True
+        return False
+
+    def is_right(self, node):
+        if self.right is not None and self.right.value == node.value:
+            return True
+        return False
 
     def print_colour(self):
         return "RED" if self.get_colour() else "BLACK"
@@ -88,8 +98,79 @@ class RedBlackTree(object):
             self.rotate(node)
             return node
 
+    def search(self, value, node=None):
+        if node is None:
+            node = self.root
+        if node.value == value:  # match
+            return node
+        elif value < node.value:  # search left subtree
+            if node.left is not None:
+                return self.search(value, node=node.left)
+        else:  # search right subtree
+            if node.right is not None:
+                return self.search(value, node=node.right)
+        return node  # unsuccessful search
+
+    # def delete(self, value):
+    #     # 473
+    #     node = self.search(value)
+    #     if node.left is not None and node.right is not None:    # has 2 children
+    #         replacement = node.left
+    #         node.parent.left = replacement
+    #         replacement.
+    #     parent = node.parent
+    #
+    #
+    #
+    #     parent = node.parent
+    #     if len(self) == 1:
+    #         self.root.set_black()  # special case: ensure that root is black
+    #     elif node is not None:
+    #         n = node.num_children()    #TODO
+    #         if n == 1:  # deficit exists unless child is a red leaf
+    #             c = next(self.children(node))
+    #             if not c.is_red_leaf():
+    #                 self.fix_deficit(node, c)
+    #             elif n == 2:  # removed black node with red child
+    #                 if node.left.is_red_leaf():
+    #                     node.left.set_black()
+    #                 else:
+    #                     node.right.set_black()
+    #
+    # def fix_deficit(self, z, y):
+    #     if not y.get_colour():  # y is black; will apply Case 1 or 2
+    #         x = y.get_red_child()
+    #         if x is not None:   # Case 1: Node y Is Black and Has a Red Child x
+    #             old_color = z.get_colour()  # Case 1: y is black and has red child x; do ”transfer”
+    #             middle = self.restructure(x)
+    #             middle.red = old_color  # middle gets old color of z
+    #             middle.left.set_black()  # children become black
+    #             middle.right.set_black()
+    #         else:   # Case 2: y is black, but no red children; recolor as ”fusion”
+    #             y.set_red()
+    #             if z.is_red():
+    #                 z.set_black()
+    #             elif not z != self.root:
+    #                 self.fix_deficit(z.parent, z.sibling())  # recur upward
+
+    # else:  # Case 3: y is red; rotate misaligned 3-node and repeat
+    #     self.rotate(y)
+    #     y.set_black()
+    #     z.set_red()
+    #     if z == y.right:
+    #         self.fix_deficit(z, z.left)
+    #     else:
+    #         self.fix_deficit(z, z.right)
+
+    # Case 2: Node y Is Black and Both Children of y Are Black (or None).
+    # Case 3: Node y Is Red.
+
     def insert(self, value):
         new_node = Node(value=value)
+        if self.root is None:
+            self.root = new_node
+        else:
+            self.set_temp_parent(new_node)
         self.resolve_red(new_node)
 
     def resolve_red(self, node):
@@ -97,7 +178,7 @@ class RedBlackTree(object):
             self.root = node
             node.set_black()
         else:
-            parent = self.set_temp_parent(node)
+            parent = node.parent
             if parent.get_colour():  # Double red problem
                 uncle = parent.get_sibling()
                 if uncle is None or not uncle.get_colour():  # Case 1: Uncle is Black or None
@@ -107,11 +188,14 @@ class RedBlackTree(object):
                         mid.left.set_red()
                     mid.right.set_red()
                 else:  # # Case 2: Uncle is Red
+                    print("check")
                     grand = parent.parent
-                    grand.set_red()     # Perform recolouring
+                    grand.set_red()  # Perform recolouring
                     grand.left.set_black()
                     grand.right.set_black()
                     self.resolve_red(grand)
+            else:
+                print("exit")
 
     def set_temp_parent(self, new_node):
         current_node = self.root
@@ -119,7 +203,7 @@ class RedBlackTree(object):
             if new_node.get_value() < current_node.get_value():
                 if current_node.left is None:
                     new_node.parent = current_node
-                    current_node.right = new_node
+                    current_node.left = new_node
                     return current_node
                 else:
                     current_node = current_node.left
@@ -131,33 +215,75 @@ class RedBlackTree(object):
                 else:
                     current_node = current_node.right
 
-    def visualize(self, node=None, length=0):
-        if node is None:
-            print("#########################")
-            node = self.root
-        print("-"*length, "Node Value:", node.value, "Colour:", node.print_colour())
-        if node.left is None:
-            print("-NONE parent:", node.value)
-        else:
-            self.visualize(node=node.left, length=length+1)
+    def display(self):
+        """Reference: https://stackoverflow.com/questions/34012886/print-binary-tree-level-by-level-in-python
+        Node colour: *:red :black
+        """
+        print("################################")
+        lines, *_ = self._display_aux(self.root)
+        for line in lines:
+            print(line)
+        print("################################")
+
+    def _display_aux(self, node):
+        """Returns list of strings, width, height, and horizontal coordinate of the root."""
+        # No child.
+        if node.right is None and node.left is None:
+            line = '%s' % (str(node.value) + ('*' if node.get_colour() else ''))
+            width = len(line)
+            height = 1
+            middle = width // 2
+            return [line], width, height, middle
+
+        # Only left child.
         if node.right is None:
-            print("-NONE parent:", node.value)
-        else:
-            self.visualize(node=node.right, length=length+1)
+            lines, n, p, x = self._display_aux(node.left)
+            s = '%s' % (str(node.value) + ('*' if node.get_colour() else ''))
+            u = len(s)
+            first_line = (x + 1) * ' ' + (n - x) * '_' + s
+            second_line = x * ' ' + '/' + (n - x - 1 + u) * ' '
+            shifted_lines = [line + u * ' ' for line in lines]
+            return [first_line, second_line] + shifted_lines, n + u, p + 2, n + u // 2
 
+        # Only right child.
+        if node.left is None:
+            lines, n, p, x = self._display_aux(node.right)
+            s = '%s' % (str(node.value) + ('*' if node.get_colour() else ''))
+            u = len(s)
+            first_line = s + (x * '_') + ((n - x) * ' ')
+            second_line = (u + x) * ' ' + '\\' + (n - x - 1) * ' '
+            shifted_lines = [u * ' ' + line for line in lines]
+            return [first_line, second_line] + shifted_lines, n + u, p + 2, u // 2
 
+        # Two children.
+        left, n, p, x = self._display_aux(node.left)
+        right, m, q, y = self._display_aux(node.right)
+        s = '%s' % (str(node.value) + ('*' if node.get_colour() else ''))
+        u = len(s)
+        first_line = ((x + 1) * ' ') + ((n - x - 1) * '_') + s + (y * '_') + ((m - y) * ' ')
+        second_line = x * ' ' + '/' + (n - x - 1 + u + y) * ' ' + '\\' + (m - y - 1) * ' '
+        if p < q:
+            left += [n * ' '] * (q - p)
+        elif q < p:
+            right += [m * ' '] * (p - q)
 
+        zipped_lines = zip(left, right)
+        lines = [first_line, second_line] + [a + u * ' ' + b for a, b in zipped_lines]
+        return lines, n + m + u, max(p, q) + 2, n + u // 2
 
 
 if __name__ == '__main__':
     rbt = RedBlackTree()
     rbt.insert(4)
-    rbt.visualize()
     rbt.insert(7)
-    rbt.visualize()
     rbt.insert(12)
-    rbt.visualize()
+    rbt.display()
+
     rbt.insert(15)
-    rbt.visualize()
     rbt.insert(3)
-    rbt.visualize()
+    rbt.insert(5)
+    rbt.insert(14)
+    rbt.display()
+
+    rbt.insert(18)
+    rbt.display()
