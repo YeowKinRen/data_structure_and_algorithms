@@ -13,7 +13,7 @@ from graph import *
 
 class BFS(Graph):
 
-    def bfs(self, source,):
+    def bfs(self, source):
         queue = [source]
         visited = {source}
         path = [source]

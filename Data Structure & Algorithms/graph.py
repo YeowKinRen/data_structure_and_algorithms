@@ -30,6 +30,7 @@ class Graph:
         self.directed = directed
         # self.outgoing = {}
         # self.incoming = {} if directed else self.outgoing
+        self.edges = []
         self.vertices = {}
         self.num_vertices = 0
 
@@ -49,6 +50,7 @@ class Graph:
         return n in self.vertices
 
     def add_edge(self, u, v, weight=0):
+        self.edges.append((u, v, weight))
         if u not in self.vertices:
             self.add_vertex(u)
         if v not in self.vertices:

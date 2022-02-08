@@ -25,8 +25,15 @@ A list of Algorithms implemented within the project:
 
 ### [Tree Algorithm](https://en.wikipedia.org/wiki/Binary_search_tree): 
 1. [Binary Search Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/binary_search_tree.py)
-1. [Red Black Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/red_black_tree.py)
-1. [AVL Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/avl_tree.py)
+2. [Red Black Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/red_black_tree.py)
+3. [AVL Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/avl_tree.py)
+
+### [Graph Traversal Algorithm](https://en.wikipedia.org/wiki/Graph_traversal): 
+1. [Graph](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/binary_search_tree.py)
+2. [Depth First Search](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/binary_search_tree.py)
+3. [Breadth First Search](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/red_black_tree.py)
+4. [Dijkstra Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/avl_tree.py)
+5. [Floyd-Warshall Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/avl_tree.py)
 
 ***
 
