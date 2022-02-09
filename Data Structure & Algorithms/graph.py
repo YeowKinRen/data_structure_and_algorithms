@@ -51,6 +51,8 @@ class Graph:
 
     def add_edge(self, u, v, weight=0):
         self.edges.append((u, v, weight))
+        if not self.directed:
+            self.edges.append((v, u, weight))
         if u not in self.vertices:
             self.add_vertex(u)
         if v not in self.vertices:
@@ -68,6 +70,14 @@ class Graph:
             for dest in src.connected:
                 print(f'({src.key} —> {dest.key}, weight: {src.connected[dest]}) ')
             # print()
+
+    def get_adjacency_matrix(self):
+        V = len(self.vertices)
+        m = [[0]*V for _ in range(V)]
+        for e in self.edges:
+            u, v, w = e
+            m[u][v] = w
+        return m
 
 
 if __name__ == '__main__':
