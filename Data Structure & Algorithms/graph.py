@@ -77,6 +77,7 @@ class Graph:
         for e in self.edges:
             u, v, w = e
             m[u][v] = w
+            m[v][u] = w
         return m
 
 

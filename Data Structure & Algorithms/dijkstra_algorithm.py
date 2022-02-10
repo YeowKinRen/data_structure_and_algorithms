@@ -29,17 +29,23 @@ class Dijkstra(Graph):
         pq = PriorityQueue()
         pq.put((0, src))
         while not pq.empty():
-            (distance, x) = pq.get()
-            visited[x] = True
+            (d, u) = pq.get()
+            visited[u] = True
 
-            for y in range(V):
-                # if the adjacent vertices is not yet visited and the new_path is shorter than the old path
-                if mat[x][y] > 0 and visited[y] is False and dist[y] > dist[x] + mat[x][y]:
+            if u == dest:
+                print(dist[u])
+
+            for v in self.vertices[u].connected:
+                v = v.key   # neighbour
+                # if the adjacent vertices is not yet visited and the new_path is shorter than the old_path
+                new_path = dist[u] + mat[u][v]
+                old_path = dist[v]
+                if visited[v] is False and old_path > new_path:
                     # update the shortest path
-                    dist[y] = dist[x] + mat[x][y]
-                    pq.put((dist[x] + mat[x][y], y))
-
+                    dist[v] = new_path
+                    pq.put((new_path, v))
         print(dist)
+        return dist
 
 
 if __name__ == '__main__':
@@ -48,5 +54,5 @@ if __name__ == '__main__':
 
     for u, v, w in e:
         d.add_edge(u, v, w)
-    d.dijkstra(0)
+    d.dijkstra(0, 8)
     # [0, 4, 12, 19, 21, 11, 9, 8, 14]
