@@ -14,7 +14,9 @@ A list of Algorithms implemented within the project:
 8. [Longest increasing subsequence Problem](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/longest_increasing_subsequence.py)
 
 ### [Pattern Matching Algorithm](https://en.wikipedia.org/wiki/String-searching_algorithm#Classification_of_search_algorithms): 
-1. [Rabin Karp Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/rabin_karp_algorithm.py)
+1. [Gusfield's Z-Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/rabin_karp_algorithm.py)
+2. [Rabin Karp Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/rabin_karp_algorithm.py)
+3. [Knuth-Morris-Pratt Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/rabin_karp_algorithm.py)
 
 ### [Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm): 
 1. [Counting Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/counting_sort.py)
@@ -23,17 +25,24 @@ A list of Algorithms implemented within the project:
 4. [Bucket Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/bucket_sort.py)
 5. [Tim sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/timsort.py)
 
-### [Tree Algorithm](https://en.wikipedia.org/wiki/Binary_search_tree): 
+### [Tree Data Structure](https://en.wikipedia.org/wiki/Binary_search_tree): 
 1. [Binary Search Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/binary_search_tree.py)
 2. [Red Black Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/red_black_tree.py)
 3. [AVL Tree](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/avl_tree.py)
 
 ### [Graph Traversal Algorithm](https://en.wikipedia.org/wiki/Graph_traversal): 
-1. [Graph](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/binary_search_tree.py)
-2. [Depth First Search](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/binary_search_tree.py)
-3. [Breadth First Search](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/red_black_tree.py)
-4. [Dijkstra Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/avl_tree.py)
-5. [Floyd-Warshall Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/avl_tree.py)
+1. [Graph ADT](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/graph.py)
+2. [Depth First Search](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/depth_first_search.py)
+3. [Breadth First Search](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/breadth_first_search.py)
+4. [Dijkstra Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/dijkstra_algorithm.py)
+5. [Floyd-Warshall Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/floyd_warshall_algorithm.py)
+
+### [Minimum Spanning Tree](https://en.wikipedia.org/wiki/Minimum_spanning_tree): 
+1. [Kruskal's Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/kruskal_algorithm.py)
+2. [Prim–Jarník Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/prim_algorithm.py)
+
+### [Disjoint Set Data Structure](https://en.wikipedia.org/wiki/Graph_traversal): 
+1. [Disjoint Set ADT](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/disjoint_set.py)
 
 ***
 
