@@ -2,6 +2,10 @@
 
 ## Data Structure and Algorithms
 
+>*“Bad programmers worry about the code. Good programmers worry about data structures and their relationships.”*
+    - Linus Torvalds
+
+
 A list of Algorithms implemented within the project:
 ### [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming):
 1. [0-1 Knapsack Problem](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/01_knapsack.py)
