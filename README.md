@@ -21,6 +21,8 @@ A list of Algorithms implemented within the project:
 1. [Gusfield's Z-Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/rabin_karp_algorithm.py)
 2. [Rabin Karp Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/rabin_karp_algorithm.py)
 3. [Knuth-Morris-Pratt Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/rabin_karp_algorithm.py)
+3. [Boyer Moore Algorithm](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/boyer_moore_algorithm.py)
+
 
 ### [Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm): 
 1. [Counting Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/counting_sort.py)
