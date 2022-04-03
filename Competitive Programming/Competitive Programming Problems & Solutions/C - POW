@@ -1,0 +1,19 @@
+# https://atcoder.jp/contests/abc205/tasks/abc205_c
+
+def solve(A, B, C):
+    if C & 1:
+        if A > B:
+            output = ">"
+        elif A < B:
+            output = "<"
+        else:
+            output = "="
+
+    else:
+        if abs(A) > abs(B):
+            output = ">"
+        elif abs(A) < abs(B):
+            output = "<"
+        else:
+            output = "="
+    return output

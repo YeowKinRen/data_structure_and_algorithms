@@ -1,8 +1,4 @@
 
-
-
-
-
 def power(a, b):
     res = 1
     while b:
@@ -11,6 +7,7 @@ def power(a, b):
         a *= a
         b //= 2
     return res
+
 
 
 if __name__ == '__main__':

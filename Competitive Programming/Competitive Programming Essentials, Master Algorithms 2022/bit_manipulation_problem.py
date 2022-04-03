@@ -137,7 +137,7 @@ def range_bitwise_and(m, n):
 
 def total_hamming_distance(arr):
     """
-https://leetcode.com/problems/total-hamming-distance/
+    https://leetcode.com/problems/total-hamming-distance/
     :param arr:
     :return:
     """
