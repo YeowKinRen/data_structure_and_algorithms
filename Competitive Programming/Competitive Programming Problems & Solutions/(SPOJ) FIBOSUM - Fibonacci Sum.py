@@ -1,41 +1,39 @@
-def power(a, b):  # O(logb)
-    res = 1
-    while b:
-        if b & 1:  # last bit is set
-            res *= a
-        a *= a
-        b //= 2
-    return res
+# https://www.spoj.com/problems/FIBOSUM/
 
+# from typing import List
+# import numpy as np
+# Matrix = np.matrix
+#
+# MOD = 10 ** 9 + 7
+#
+#
+# def power(mat: Matrix, n: int) -> Matrix:
+#     res = np.identity(len(mat), dtype=np.int64)
+#
+#     while n:
+#         if n & 1:
+#             np.matmul(res, mat, out=res)
+#             res %= MOD
+#
+#         np.matmul(mat, mat, out=mat)
+#         mat %= MOD # Required for numpy if you want correct results
+#         n >>= 1
+#
+#     return res
+#
+#
+# def fib(n: int) -> int:
+#     if n == 0:
+#         return 0
+#
+#     magic = np.matrix([[1, 1], [1, 0]], dtype=np.int64)
+#     mat = power(magic, n - 1)
+#     return mat[0,0]
+#
+#
+# if __name__ == '__main__':
+#     print(fib(10 ** 18))
 
-mod = 1e9 + 7
-
-
-def power2(a, b):  # O(logb)
-    # modular exponentiation
-    res = 1
-    while b:
-        if b & 1:  # last bit is set
-            res *= a
-            res %= mod
-        a *= a
-        a %= mod
-        b //= 2
-    return int(res)
-
-
-def multiply(a, b):  # O(logb)
-    # fast modular multiplication
-    # same concept to look at the binary form
-    res = 0
-    while b:
-        if b & 1:  # last bit is set
-            res += a
-            res %= mod
-        a += a
-        a %= mod
-        b //= 2
-    return int(res)
 
 
 class Mat:
@@ -109,12 +107,3 @@ def fib2(n):
 
 def fibosum2(n, m):
     return (fib2(m) - fib2(n - 1) + int(mod)) % int(mod)
-
-
-if __name__ == '__main__':
-    print(power(2, 20))
-    print(power2(2, 200))
-    n = 10
-    print(fib(n))
-    print(fibosum(10, 19))
-    print(fibosum2(10, 19))

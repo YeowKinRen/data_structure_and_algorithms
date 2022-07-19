@@ -1,6 +1,8 @@
 # LOCKER - Magic of the locker
 # https://www.spoj.com/problems/LOCKER/
 # why 3? https://palak001.medium.com/spoj-locker-magic-of-the-locker-a758bccf432f
+# Interesting
+
 
 def power(a, n):
     mod = 1000000007

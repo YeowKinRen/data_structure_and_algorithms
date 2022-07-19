@@ -59,6 +59,25 @@ def z_suffix(text):
     return z
 
 
+# def bad_character(text):
+#     """
+#     Function that computes the bad character table
+#
+#     Time complexity:    Best case O(N) where N is the length of text
+#                         Worst case O(N) where N is the length of text
+#     :param text: Strings
+#     :return: bad character table, list of integers
+#     """
+#     n = len(text)
+#     bc = [[0 for _ in range(n)] for _ in range(57)]
+#     for i in range(n - 1, -1, -1):
+#         j = 1
+#         bc[ord(text[i]) - 65][i] = i + 1
+#         while i + j < n and bc[ord(text[i]) - 65][i + j] == 0:
+#             bc[ord(text[i]) - 65][i + j] = i + 1
+#             j += 1
+#     return bc
+
 def bad_character(text):
     """
     Function that computes the bad character table
@@ -69,7 +88,7 @@ def bad_character(text):
     :return: bad character table, list of integers
     """
     n = len(text)
-    bc = [[0 for _ in range(n)] for _ in range(57)]
+    bc = [[0 for _ in range(n)] for _ in range(127-65)]
     for i in range(n - 1, -1, -1):
         j = 1
         bc[ord(text[i]) - 65][i] = i + 1
@@ -132,61 +151,63 @@ def boyer_moore(txt: str, pat: str):
     bc = bad_character(pat)
     k = m - 1
     start, stop = -1, -1
-    shift = 1
+    # shift = 1
     output = []
-    comparison = 0
+    # comparison = 0
     while k < n:
         i = 0
         while i < m and txt[k - i] == pat[m - 1 - i]:
-            print(txt[k - i], pat[m - 1 - i])
+            # print(k, txt[k - i], pat[m - 1 - i])
             i += 1
-            comparison += 1
-            if k - i == stop:   # Galil's optimisation
-                print("Galil's optimisation",i, start, stop)
-                i += min(m-i, stop-start)
+            # comparison += 1
+            if k - i == stop:  # Galil's optimisation
+                print("Galil's optimisation", i, start, stop)
+                i += min(m - i, stop - start)
         if i == m:  # Exact match
+            print("Exact match")
             output.append(k - m + 1)
-            start, stop = k - (m - mp[1])-1, k
-            # print("***", k - (m - mp[1]), k)
+            start, stop = k - (m - mp[1]) - 1, k
             shift = (m - mp[1])
 
         # elif i > m:
         #     print("something wrong")
         else:  # Mismatch
-            bc_shift = max(1, m-1 - i - bc[ord(txt[k - i]) - 97][m - i - 1])
+            bc_shift = max(1, m - i - bc[ord(txt[k - i]) - 65][m - i - 1])
             # print(txt[k - i], k, i, m-1 - i - bc[ord(txt[k - i]) - 97][m - i - 1])
             bc_start = k - i - 1
             bc_stop = k - i
-            if gs[m - i] > 0:  # Case 1a: if a mismatch occurs at some pat[k] and googsuffix(k+1)>0
+            if gs[m - i] > 0:  # Case 1a: if a mismatch occurs at some pat[k] and goodsuffix(k+1)>0
+                # print("if", k, k-i-1)
                 gs_shift = m - gs[m - i]  # shift pat by m - goodsuffix(k+1) places
-                gs_start = k - i - 1  # start = gs[m - i] - m + k + 1
+                gs_start = k - i  # start = gs[m - i] - m + k + 1
                 gs_stop = k  # stop = gs[m - i]
-                # print("here?", gs_shift)
             else:  # Case 1b: if a mismatch occurs at some pat[k], and goodsuffix(k + 1)=0 (match prefix)
                 gs_shift = m - mp[m - i]  # matchprefix(k+1): length of largest suffix of pat identical to prefix
                 gs_start = k - (m - mp[m - i]) + 1  # start = 1
                 gs_stop = k  # stop = mp[m - i]
-                # print("###", gs_shift)
-            print(gs_shift, bc_shift)
+            print("gs_shift", gs_shift, "bc_shift", bc_shift)
             if bc_shift > gs_shift:
                 shift = bc_shift
                 start, stop = bc_start, bc_stop
-            else:    # bcShift <= gsShift:
+            else:  # bcShift <= gsShift:
                 shift = gs_shift
                 start, stop = gs_start, gs_stop
         k += shift
-            # print("k", k - shift, "shift", shift, stop, "--->",start)
-    # print(comparison)
     return output
 
 
 if __name__ == '__main__':
     # text = "xpbctbxabacbxtbpqa"
-    txt = "01234567890123456789012345"
-    txt = "CGTGCCTACTTACTTACTTACGCGAA"
-    txt = "ANPANMAN"
-    # txt = "abaaabcd"
-    pat = "CTTACTTAC"
-    pat = "PAN"
-    # pat = "abc"
+    # txt = "01234567890123456789012345"
+
+    # txt = "ANPANMAN"
+    # pat = "PAN"
+
+    # txt = "abababababa" # Galil Optimization
+    # pat =  "babab"
+
+    txt = "GTTATAGCTGATCGCGGCGTAGCGGCGA"
+    pat =           "GTAGCGGCG"
+
+
     print(boyer_moore(txt, pat))
