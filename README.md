@@ -2,9 +2,8 @@
 
 ## Data Structure and Algorithms
 
-> _“Bad programmers worry about the code. Good programmers worry about data structures and their relationships.”_
-
-    - Linus Torvalds
+> _“Bad programmers worry about the code. Good programmers worry about data structures and their relationships.”
+- Linus Torvalds_
 
 A list of Algorithms implemented within the project:
 
@@ -28,11 +27,11 @@ A list of Algorithms implemented within the project:
 
 ### [Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm):
 
-1. [Counting Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/counting_sort.py)
-2. [Radix Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/radix_sort.py)
-3. [Merge Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/merge_sort.py)
-4. [Bucket Sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/bucket_sort.py)
-5. [Tim sort](https://github.com/YeowKinRen/guacamole/blob/master/Data%20Structure%20%26%20Algorithms/timsort.py)
+1. [Counting Sort](https://github.com/YeowKinRen/data_structure_and_algorithms/blob/master/Data%20Structure%20%26%20Algorithms/Sorting/counting_sort.py)
+2. [Radix Sort](https://github.com/YeowKinRen/data_structure_and_algorithms/blob/master/Data%20Structure%20%26%20Algorithms/Sorting/radix_sort.py)
+3. [Merge Sort](https://github.com/YeowKinRen/data_structure_and_algorithms/blob/master/Data%20Structure%20%26%20Algorithms/Sorting/merge_sort.py)
+4. [Bucket Sort](https://github.com/YeowKinRen/data_structure_and_algorithms/blob/master/Data%20Structure%20%26%20Algorithms/Sorting/bucket_sort.py)
+5. [Tim sort](https://github.com/YeowKinRen/data_structure_and_algorithms/blob/master/Data%20Structure%20%26%20Algorithms/Sorting/timsort.py)
 
 ### [Tree Data Structure](https://en.wikipedia.org/wiki/Binary_search_tree):
 
