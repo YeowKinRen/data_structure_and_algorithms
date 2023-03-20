@@ -8,31 +8,31 @@ Binary Search Tree
 """
 
 
-class Node(object):
-    def __init__(self, parent=None, left=None, right=None, value=None):
-        self.parent = parent
-        self.left = left
-        self.right = right
-        self.value = value
+class __Node(object):
+    def __init__(self, key, data,leftChild=None, rightChild=None):
+        self.data = data
+        self.leftChild = leftChild
+        self.rightChild = rightChild
+        self.key = key
 
-    def get_sibling(self):
-        if self.parent is None or self.parent.left is None:
-            sibling = None
-        elif self == self.parent.left:
-            sibling = self.parent.right
-        else:
-            sibling = self.parent.left
-        return sibling
+    # def get_sibling(self):
+    #     if self.parent is None or self.parent.left is None:
+    #         sibling = None
+    #     elif self == self.parent.left:
+    #         sibling = self.parent.right
+    #     else:
+    #         sibling = self.parent.left
+    #     return sibling
 
-    def get_value(self):
-        return self.value
+    def __str__(self):
+        return "{" + str(self.key) +", "+str(self.data) + "}"
 
 
 
 class BinarySearchTree(object):
 
     def __init__(self):
-        self.root = None
+        self.__root = None
 
     def search(self, value, node=None):
         if node is None:
